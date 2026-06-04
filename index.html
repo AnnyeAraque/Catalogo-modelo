@@ -3,121 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Digital - Modelo de Prueba</title>
+    <title>Catálogo Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Encabezado del Negocio -->
+    <!-- Header dinámico -->
     <header class="header">
-        <h1 class="brand-name">Burgers & Co. Yopal</h1>
-        <p class="brand-slogan">¡Pide tus domicilios en 2 clics!</p>
+        <h1 class="brand-name">Nombre Negocio</h1>
+        <p class="brand-slogan">Slogan aquí</p>
     </header>
 
     <h2 class="titulo-seccion">🍔 Nuestro Menú</h2>
 
-    <!-- Contenedor del Catálogo -->
-    <main class="catalog-container">
-        
-        <!-- Producto 1 -->
-        <div class="product-card card-individual">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Hamburguesa Especial" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Hamburguesa Especial</h3>
-                <p class="product-desc">Carne artesanal, queso cheddar, tocineta crujiente y salsa de la casa.</p>
-                <div class="product-footer">
-                    <span class="product-price" data-precio-base="22000">$22.000</span>
+    <!-- Contenedor que se llena con JavaScript -->
+    <main class="catalog-container" id="catalogo-productos"></main>
 
-                    <!-- Selector de cantidad -->
-                    <div class="control-cantidad">
-                        <label>Cant:</label>
-                        <input type="number" class="input-cantidad" value="1" min="1" max="10">
-                    </div>
-
-                    <!-- Total dinámico y botón -->
-                    <div class="bloque-pedido">
-                        <span class="total-producto">Total: $22.000</span>
-                        <button class="btn-order" onclick="enviarPedido('Hamburguesa Especial', '$22.000')">Pedir por WhatsApp</button>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-
-        <!-- Producto 2 -->
-        <div class="product-card card-individual">
-            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza Personal" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Pizza Hawaiana Personal</h3>
-                <p class="product-desc">Masa delgada, doble porción de jamón, piña calada y mucho queso mozzarella.</p>
-                <div class="product-footer">
-                    <span class="product-price" data-precio-base="18000">$18.000</span>
-                    
-                    <!-- Selector de cantidad -->
-                    <div class="control-cantidad">
-                        <label>Cant:</label>
-                        <input type="number" class="input-cantidad" value="1" min="1" max="10">
-                    </div>
-
-                    <!-- Total dinámico y botón -->
-                    <div class="bloque-pedido">
-                        <span class="total-producto">Total: $18.000</span>
-                        <button class="btn-order" onclick="enviarPedido('Pizza Hawaiana Personal', '$18.000')">Pedir por WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <section class="seccion-combo">
-        <div class="tarjeta-combo">
-            <div class="badge-descuento">✨ ¡10% DESC. INCLUIDO! ✨</div>
-            <h2>🛠️ ¡Arma tu Combo Ideal!</h2>
-            <p class="subtitulo-combo">Elige un plato, un acompañamiento y una bebida.</p>
-            
-            <div class="grupo-seleccion">
-                <label for="select-plato">🍔 Elige tu plato:</label>
-                <select id="select-plato">
-                    <option value="">Seleccione producto...</option>
-                    <option value="18000">Hamburguesa Especial</option>
-                    <option value="15000">Hamburguesa Sencilla</option>
-                </select>
-            </div>
-
-            <div class="grupo-seleccion">
-                <label for="select-acompanamiento">🍟 Elige acompañamiento:</label>
-                <select id="select-acompanamiento">
-                    <option value="">Seleccione producto...</option>
-                    <option value="12000">Papas Supremas</option>
-                    <option value="6000">Papas Francesas Normales</option>
-                </select>
-            </div>
-
-            <div class="grupo-seleccion">
-                <label for="select-bebida">🥤 Elige tu bebida:</label>
-                <select id="select-bebida">
-                    <option value="">Seleccione producto...</option>
-                    <option value="5000">Combo Gaseosa</option>
-                    <option value="4000">Agua Mineral</option>
-                </select>
-            </div>
-
-            <div class="fila-pedido-combo">
-                <div class="precios-combo-display">
-                    <span class="antes-precio" id="precio-antes-combo">Antes:</span>
-                    <span class="total-combo" id="total-combo-precio">Total Combo:</span>
-                </div>
-                <button id="btn-pedido-combo" class="btn-pedido-combo">Pedir Combo 🛵</button>
-            </div>
-        </div>
-    </section>
+    <!-- Sección combos (se genera dinámicamente) -->
+    <section class="seccion-combo" id="seccion-combos-container"></section>
 
     <footer>
         <p>© 2026 Desarrollado por July Dev</p>
     </footer>
 
+    <!-- Cargar en orden correcto -->
+    <script src="config.js"></script>
+    <script src="utils.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
