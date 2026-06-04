@@ -159,8 +159,8 @@ body {
 .badge-descuento {
     position: absolute;
     top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 25%;
+    transform: translateX(-5%);
     background-color: var(--color-combo);
     color: white;
     padding: 5px 15px;
