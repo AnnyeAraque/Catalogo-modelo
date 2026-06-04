@@ -77,18 +77,56 @@ body {
 /* Footer de la tarjeta */
 .product-footer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .product-price {
+    display: flex;
+    align-items: center;
     font-size: 18px;
     font-weight: bold;
     color: #04d361; /* Verde éxito */
 }
 
+.control-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.control-cantidad label {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.input-cantidad {
+    width: 45px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.bloque-pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.total-producto {
+    align-self: flex-end;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b7cecf; 
+}
+
 /* Botón de Pedido */
 .btn-order {
+    display: block;
+    margin: 12px auto 0;
     background-color: #25d366; /* Verde oficial de WhatsApp */
     color: #fff;
     border: none;
@@ -102,4 +140,112 @@ body {
 
 .btn-order:hover {
     background-color: #1ebd56;
+}
+
+/* ESTILOS DE LA SECCIÓN DE COMBOS */
+.seccion-combo {
+    padding: 15px;
+}
+
+.tarjeta-combo {
+    background-color: rgb(44, 42, 42);
+    border: 3px solid var(--color-combo);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 6px 15px rgba(142, 68, 173, 0.15);
+}
+
+.badge-descuento {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-combo);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.tarjeta-combo h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--color-combo);
+}
+
+.subtitulo-combo {
+    font-size: 0.85rem;
+    text-align: center;
+    color: #7b8181;
+    margin-bottom: 20px;
+}
+
+.grupo-seleccion {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.grupo-seleccion label {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.grupo-seleccion select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #bdc3c7;
+    background-color: #d8d5d5;
+    font-size: 0.95rem;
+    color: var(--color-texto);
+}
+
+.fila-pedido-combo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 2px solid #f4f4f4;
+    padding-top: 15px;
+}
+
+.precios-combo-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.antes-precio {
+    font-size: 0.85rem;
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.total-combo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-combo);
+}
+
+.btn-pedido-combo {
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
+}
+
+footer {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 0.8rem;
+    color: #95a5a6;
 }
