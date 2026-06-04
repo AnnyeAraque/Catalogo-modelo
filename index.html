@@ -20,13 +20,13 @@
     <main class="catalog-container">
         
         <!-- Producto 1 -->
-        <div class="product-card">
+        <div class="product-card card-individual">
             <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Hamburguesa Especial" class="product-img">
             <div class="product-info">
                 <h3 class="product-title">Hamburguesa Especial</h3>
                 <p class="product-desc">Carne artesanal, queso cheddar, tocineta crujiente y salsa de la casa.</p>
                 <div class="product-footer">
-                    <span class="product-price">$22.000</span>
+                    <span class="product-price" data-precio-base="22000">$22.000</span>
 
                     <!-- Selector de cantidad -->
                     <div class="control-cantidad">
@@ -46,13 +46,13 @@
         </div>
 
         <!-- Producto 2 -->
-        <div class="product-card">
+        <div class="product-card card-individual">
             <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza Personal" class="product-img">
             <div class="product-info">
                 <h3 class="product-title">Pizza Hawaiana Personal</h3>
                 <p class="product-desc">Masa delgada, doble porción de jamón, piña calada y mucho queso mozzarella.</p>
                 <div class="product-footer">
-                    <span class="product-price">$18.000</span>
+                    <span class="product-price" data-precio-base="18000">$18.000</span>
                     
                     <!-- Selector de cantidad -->
                     <div class="control-cantidad">
@@ -80,31 +80,31 @@
             <div class="grupo-seleccion">
                 <label for="select-plato">🍔 Elige tu plato:</label>
                 <select id="select-plato">
-                    <option value="18000">Hamburguesa Especial ($18.000)</option>
-                    <option value="15000">Hamburguesa Sencilla ($15.000)</option>
+                    <option value="18000">Hamburguesa Especial</option>
+                    <option value="15000">Hamburguesa Sencilla</option>
                 </select>
             </div>
 
             <div class="grupo-seleccion">
                 <label for="select-acompanamiento">🍟 Elige acompañamiento:</label>
                 <select id="select-acompanamiento">
-                    <option value="12000">Papas Supremas ($12.000)</option>
-                    <option value="6000">Papas Francesas Normales ($6.000)</option>
+                    <option value="12000">Papas Supremas</option>
+                    <option value="6000">Papas Francesas Normales</option>
                 </select>
             </div>
 
             <div class="grupo-seleccion">
                 <label for="select-bebida">🥤 Elige tu bebida:</label>
                 <select id="select-bebida">
-                    <option value="5000">Combo Gaseosa ($5.000)</option>
-                    <option value="4000">Agua Mineral ($4.000)</option>
+                    <option value="5000">Combo Gaseosa</option>
+                    <option value="4000">Agua Mineral</option>
                 </select>
             </div>
 
             <div class="fila-pedido-combo">
                 <div class="precios-combo-display">
-                    <span class="antes-precio" id="precio-antes-combo">Antes: $35.000</span>
-                    <span class="total-combo" id="total-combo-precio">Total Combo: $31.500</span>
+                    <span class="antes-precio" id="precio-antes-combo">Antes:</span>
+                    <span class="total-combo" id="total-combo-precio">Total Combo:</span>
                 </div>
                 <button id="btn-pedido-combo" class="btn-pedido-combo">Pedir Combo 🛵</button>
             </div>

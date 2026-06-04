@@ -199,10 +199,10 @@ body {
 .grupo-seleccion select {
     padding: 10px;
     border-radius: 8px;
-    border: 1px solid #bdc3c7;
+    border: 1px solid #f5c836;
     background-color: #d8d5d5;
     font-size: 0.95rem;
-    color: var(--color-texto);
+    color: #2b2a2a;
 }
 
 .fila-pedido-combo {
@@ -232,7 +232,7 @@ body {
 }
 
 .btn-pedido-combo {
-    background-color: var(--color-boton);
+    background-color: #25d366;
     color: white;
     border: none;
     padding: 12px 22px;
