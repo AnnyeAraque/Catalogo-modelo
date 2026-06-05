@@ -31,6 +31,13 @@ body {
     color: #a8a8b3;
 }
 
+.titulo-seccion {
+    text-align: left;
+    font-size: 30px;
+    margin: 25px 0 15px;
+    color: #ffffff;
+}
+
 /* Contenedor principal */
 .catalog-container {
     max-width: 480px; /* Tamaño máximo estándar de pantalla móvil */
@@ -144,6 +151,8 @@ body {
 
 /* ESTILOS DE LA SECCIÓN DE COMBOS */
 .seccion-combo {
+    max-width: 480px; /* Tamaño máximo estándar de pantalla móvil */
+    margin: 0 auto;
     padding: 15px;
 }
 
