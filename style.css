@@ -32,7 +32,8 @@ body {
 }
 
 .titulo-seccion {
-    text-align: left;
+    max-width: 480px;
+    margin: 0 auto; 
     font-size: 30px;
     margin: 25px 0 15px;
     color: #ffffff;
