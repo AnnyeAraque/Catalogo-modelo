@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Digital - Modelo de Prueba</title>
+    <title>Catálogo Digital - Burgers & Co. Yopal</title>
+    <meta name="description" content="Catálogo digital interactivo para restaurantes. Pide por WhatsApp directamente desde nuestro menú. Arma tus combos personalizados con descuento.">
+    <meta name="keywords" content="catálogo digital, restaurante, menú, pedidos, WhatsApp, domicilios, combos">
+    <meta name="author" content="July Dev">
+    <meta name="theme-color" content="#ff9000">
+    <meta property="og:title" content="Burgers & Co. Yopal - Catálogo Digital">
+    <meta property="og:description" content="Pide tus domicilios en 2 clics. Menú interactivo con combos personalizados y descuentos especiales.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -80,6 +88,7 @@
             <div class="grupo-seleccion">
                 <label for="select-plato">🍔 Elige tu plato:</label>
                 <select id="select-plato">
+                    <option value="">Seleccione producto...</option>
                     <option value="18000">Hamburguesa Especial</option>
                     <option value="15000">Hamburguesa Sencilla</option>
                 </select>
@@ -88,6 +97,7 @@
             <div class="grupo-seleccion">
                 <label for="select-acompanamiento">🍟 Elige acompañamiento:</label>
                 <select id="select-acompanamiento">
+                    <option value="">Seleccione producto...</option>
                     <option value="12000">Papas Supremas</option>
                     <option value="6000">Papas Francesas Normales</option>
                 </select>
@@ -96,6 +106,7 @@
             <div class="grupo-seleccion">
                 <label for="select-bebida">🥤 Elige tu bebida:</label>
                 <select id="select-bebida">
+                    <option value="">Seleccione producto...</option>
                     <option value="5000">Combo Gaseosa</option>
                     <option value="4000">Agua Mineral</option>
                 </select>

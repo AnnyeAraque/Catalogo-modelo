@@ -46,13 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnPedidoCombo = document.getElementById("btn-pedido-combo");
 
     const calcularTotalesCombo = () => {
-        const valorPlato = parseInt(selectPlato.value);
-        const valorAco = parseInt(selectAcompanamiento.value);
-        const valorBebida = parseInt(selectBebida.value);
+        // Solo sumar valores que estén seleccionados (no vacíos)
+        const valorPlato = selectPlato.value ? parseInt(selectPlato.value) : 0;
+        const valorAco = selectAcompanamiento.value ? parseInt(selectAcompanamiento.value) : 0;
+        const valorBebida = selectBebida.value ? parseInt(selectBebida.value) : 0;
 
         const sumaBruta = valorPlato + valorAco + valorBebida;
         const ahorro = sumaBruta * PORCENTAJE_DESCUENTO;
-        const precioFinalConDescuento = sumaBruta - Ahorro;
+        const precioFinalConDescuento = sumaBruta - ahorro;
 
         displayAntesCombo.textContent = `Antes: $${sumaBruta.toLocaleString('es-CO')}`;
         displayTotalCombo.textContent = `Total Combo: $${precioFinalConDescuento.toLocaleString('es-CO')}`;
