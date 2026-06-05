@@ -18,7 +18,7 @@
       "nombre": "Hamburguesa Sencilla",
       "descripcion": "Carne 100% pura con lechuga y tomate",
       "precio": 15000,
-      "imagen": "url...",
+      "imagen": "https://cdn.pixabay.com/photo/2022/07/15/18/12/cheese-burger-7323672_1280.jpg",
       "categoria": "Hamburguesas",
       "tipo": "individual"
     },
@@ -27,7 +27,7 @@
       "nombre": "Pizza Hawaiana Personal",
       "descripcion": "Masa delgada, jamón, piña y queso mozzarella",
       "precio": 18000,
-      "imagen": "url...",
+      "imagen": "https://cdn.pixabay.com/photo/2020/10/17/11/06/pizza-5661748_1280.jpg",
       "categoria": "Pizzas",
       "tipo": "individual"
     }
