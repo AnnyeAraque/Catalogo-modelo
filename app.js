@@ -126,7 +126,7 @@ function agregarEventosCombos(dataCombos) {
         displayTotal.textContent = `Total Combo: $${resultado.despues.toLocaleString('es-CO')}`;
         avisoCombo.textContent = resultado.valido
             ? ''
-            : 'El descuento solo aplica con Plato Principal + Bebida o Plato Principal + Acompañamiento.';
+            : 'El descuento aplica al seleccionar minimo Plato Principal + Bebida o Plato Principal + Acompañamiento.';
         btnPedido.disabled = !resultado.valido;
     };
     
