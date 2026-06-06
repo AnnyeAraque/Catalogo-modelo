@@ -2,7 +2,7 @@ const NEGOCIO_CONFIG = {
     // Identificación
     nombre: "Burgers & Co. Yopal",
     slogan: "¡Pide tus domicilios en 2 clics!",
-    telefono: "573123780870",
+    telefono: "573123780870", // Número de WhatsApp del negocio (con código de país)
     
     // Estilos
     colores: {

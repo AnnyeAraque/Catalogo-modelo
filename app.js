@@ -72,7 +72,7 @@ function agregarEventosProductos() {
             const cantidad = inputCantidad.value;
             const precioTotal = botonPedido.getAttribute("data-precio") || precioBase;
             
-            const mensaje = `Hola! 👋 Vengo de tu catálogo digital.\nMe gustaría solicitar:\n\n *${nombreProducto}*\n Cantidad: ${cantidad}\n *Total Pedido: $${parseInt(precioTotal).toLocaleString('es-CO')}*`;
+            const mensaje = `Hola! 👋 Vengo de tu catálogo digital.\nMe gustaría solicitar:\n\n *${nombreProducto}*\n Cantidad: ${cantidad}\n *Total Pedido: $${parseInt(precioTotal).toLocaleString('es-CO')}* \n\n Me confirmas el pedido?`;
             
             enviarWhatsApp(mensaje);
         });
@@ -145,7 +145,7 @@ function agregarEventosCombos(dataCombos) {
         
         const resultado = calcularComboConValidacion(selects, PORCENTAJE_DESCUENTO);
         
-        const mensaje = `¡Hola! ⚡ He armado un *Combo Personalizado*:\n\n${items.map(i => `• ${i}`).join('\n')}\n\n🔥 *Precio Combo (${(PORCENTAJE_DESCUENTO * 100)}% Desc): $${resultado.despues.toLocaleString('es-CO')}*`;
+        const mensaje = `¡Hola! ⚡ He armado un *Combo Personalizado*:\n\n${items.map(i => `• ${i}`).join('\n')}\n\n🔥 *Precio Combo (${(PORCENTAJE_DESCUENTO * 100)}% Desc): $${resultado.despues.toLocaleString('es-CO')}* \n\n Me confirmas el pedido?`;
         
         enviarWhatsApp(mensaje);
     });
