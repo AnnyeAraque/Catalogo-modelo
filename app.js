@@ -93,7 +93,10 @@ function renderizarSeccionCombos(dataCombos) {
                     <span class="antes-precio" id="precio-antes-combo">Antes: $0</span>
                     <span class="total-combo" id="total-combo-precio">Total Combo: $0</span>
                 </div>
-                <button id="btn-pedido-combo" class="btn-pedido-combo">Pedir Combo 🛵</button>
+            </div>
+            <p class="combo-aviso" id="aviso-combo"></p>
+            <div class="fila-pedido-combo">
+                <button id="btn-pedido-combo" class="btn-pedido-combo" disabled>Pedir Combo 🛵</button>
             </div>
         </div>
     `;
@@ -113,13 +116,18 @@ function agregarEventosCombos(dataCombos) {
     const selects = dataCombos.map(c => document.getElementById(`select-${c.id}`));
     const displayAntes = document.getElementById("precio-antes-combo");
     const displayTotal = document.getElementById("total-combo-precio");
+    const avisoCombo = document.getElementById("aviso-combo");
     const btnPedido = document.getElementById("btn-pedido-combo");
     
     const actualizarCombo = () => {
-        const resultado = calcularComboConValidacion(selects, PORCENTAJE_DESCUENTO);
+        const resultado = calcularComboConValidacion(selects, dataCombos, PORCENTAJE_DESCUENTO);
         
         displayAntes.textContent = `Antes: $${resultado.antes.toLocaleString('es-CO')}`;
         displayTotal.textContent = `Total Combo: $${resultado.despues.toLocaleString('es-CO')}`;
+        avisoCombo.textContent = resultado.valido
+            ? ''
+            : 'El descuento solo aplica con Plato Principal + Bebida o Plato Principal + Acompañamiento.';
+        btnPedido.disabled = !resultado.valido;
     };
     
     selects.forEach(select => {
@@ -143,12 +151,48 @@ function agregarEventosCombos(dataCombos) {
             return;
         }
         
-        const resultado = calcularComboConValidacion(selects, PORCENTAJE_DESCUENTO);
+        const resultado = calcularComboConValidacion(selects, dataCombos, PORCENTAJE_DESCUENTO);
         
-        const mensaje = `¡Hola! ⚡ He armado un *Combo Personalizado*:\n\n${items.map(i => `• ${i}`).join('\n')}\n\n🔥 *Precio Combo (${(PORCENTAJE_DESCUENTO * 100)}% Desc): $${resultado.despues.toLocaleString('es-CO')}* \n\n Me confirmas el pedido?`;
+        if (!resultado.valido) {
+            alert('Recuerda: para obtener descuento debes seleccionar plato principal + bebida o plato principal + acompañamiento.');
+        }
+        
+        const mensaje = `¡Hola! ⚡ He armado un *Combo Personalizado*:\n\n${items.map(i => `• ${i}`).join('\n')}\n\n🔥 *Precio Combo (${resultado.valido ? (PORCENTAJE_DESCUENTO * 100) : 0}% Desc): $${resultado.despues.toLocaleString('es-CO')}* \n\n Me confirmas el pedido?`;
         
         enviarWhatsApp(mensaje);
     });
+}
+
+function esComboValido(selectores, dataCombos) {
+    const seleccion = dataCombos.map((combo, index) => ({
+        id: combo.id,
+        precio: selectores[index].value ? parseInt(selectores[index].value, 10) : 0
+    }));
+
+    const tienePlato = seleccion.some(item => item.id === 'combo-plato' && item.precio > 0);
+    const tieneAcompanamiento = seleccion.some(item => item.id === 'combo-acompanamiento' && item.precio > 0);
+    const tieneBebida = seleccion.some(item => item.id === 'combo-bebida' && item.precio > 0);
+
+    return tienePlato && (tieneAcompanamiento || tieneBebida);
+}
+
+function calcularComboConValidacion(selectores, dataCombos, descuento) {
+    let total = 0;
+
+    selectores.forEach(selector => {
+        if (selector.value) {  // Solo suma si hay selección
+            total += parseInt(selector.value, 10);
+        }
+    });
+
+    const valido = esComboValido(selectores, dataCombos);
+    const ahorro = valido ? total * descuento : 0;
+    return {
+        antes: total,
+        descuento: ahorro,
+        despues: total - ahorro,
+        valido
+    };
 }
 
 function enviarWhatsApp(msg) {
