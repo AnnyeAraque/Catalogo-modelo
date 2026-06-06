@@ -41,10 +41,26 @@ function agregarEventosProductos() {
         const botonPedido = tarjeta.querySelector(".btn-order");
         const nombreProducto = botonPedido.getAttribute("data-producto");
         
+        const validarCantidad = () => {
+            let valor = inputCantidad.value.replace(/\D/g, '');
+            if (valor.length > 2) {
+                valor = valor.slice(0, 2);
+            }
+            if (valor === '') {
+                valor = '1';
+            }
+            if (parseInt(valor, 10) < 1) {
+                valor = '1';
+            }
+            if (parseInt(valor, 10) > 99) {
+                valor = '99';
+            }
+            inputCantidad.value = valor;
+        };
+
         const actualizarTotal = () => {
-            let cantidad = parseInt(inputCantidad.value) || 1;
-            if (cantidad < 1) cantidad = 1;
-            
+            validarCantidad();
+            const cantidad = parseInt(inputCantidad.value, 10) || 1;
             const totalCalculado = precioBase * cantidad;
             displayTotal.textContent = `Total: $${totalCalculado.toLocaleString('es-CO')}`;
             botonPedido.setAttribute("data-precio", totalCalculado);
