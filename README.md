@@ -1,8 +1,8 @@
-Modelo de catalogo de productos para realizar pedidos por Whatsapp
-Responsive, adaptable a cualquier negocio.
-Desarrollada con:
+Responsive digital catalog for small businesses with WhatsApp ordering integration.
 
--HTML
--CSS
--JavaScript
-
+✔ Responsive
+✔ WhatsApp integration
+✔ JSON-based products
+✔ Easy customization
+✔ Reusable structure
+✔ Netlify ready

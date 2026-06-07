@@ -1,0 +1,20 @@
+July Dev Commercial License
+
+Copyright (c) 2026 July Dev
+
+Permission is granted to the purchaser to use this software for personal or commercial projects, including client projects.
+
+You are allowed to:
+- Modify the source code
+- Customize branding and products
+- Deploy the catalog for clients
+
+You are NOT allowed to:
+- Resell this template as your own product
+- Redistribute the source files for free
+- Upload the template to marketplaces or public repositories
+
+This software is provided "as is", without warranty of any kind.
+
+Author:
+July Dev

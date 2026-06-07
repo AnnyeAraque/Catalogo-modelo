@@ -4,7 +4,8 @@ const PORCENTAJE_DESCUENTO = NEGOCIO_CONFIG.descuentoCombo;
 // Cargar datos (en el navegador, desde JSON local o API)
 async function cargarDatos() {
     try {
-        const response = await fetch('data.json');
+        // path relative to index.html: data/data.json
+        const response = await fetch('data/data.json');
         const datos = await response.json();
         inicializarCatalogo(datos);
     } catch (error) {
