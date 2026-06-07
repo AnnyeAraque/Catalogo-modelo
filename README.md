@@ -6,22 +6,22 @@ Designed for restaurants, clothing stores, beauty shops, coffee shops and local 
 
 ## Features
 
-+ Responsive design  
-+ WhatsApp ordering integration  
-+ JSON-based products system  
-+ Reusable and modular structure  
-+ Easy branding customization  
-+ Dynamic product rendering  
-+ Netlify ready  
-+ Lightweight and fast
+- Responsive design  
+- WhatsApp ordering integration  
+- JSON-based products system  
+- Reusable and modular structure  
+- Easy branding customization  
+- Dynamic product rendering  
+- Netlify ready  
+- Lightweight and fast
 
 ## Tech Stack
 
-> HTML5
-> CSS3
-> JavaScript
-> JSON
-> Netlify
+- HTML5
+- CSS3
+- JavaScript
+- JSON
+- Netlify
 
 ## Project Structure
 
@@ -36,3 +36,26 @@ Designed for restaurants, clothing stores, beauty shops, coffee shops and local 
 index.html
 README.md
 LICENSE.txt
+
+## Customization
+
+You can easily customize:
+
+- Business name
+- WhatsApp number
+- Brand colors
+- Product categories
+- Product information
+- Images and banners
+
+## Deployment
+
+This project can be deployed easily using:
+
+- Netlify
+- GitHub Pages
+- Vercel
+
+## License
+
+Commercial license included.
