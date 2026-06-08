@@ -69,6 +69,56 @@ function agregarEventosProductos() {
         
         inputCantidad.addEventListener("input", actualizarTotal);
         
+        // Si el input está en '1', borrar el valor al enfocar para poder escribir una cantidad nueva
+        inputCantidad.addEventListener('focus', () => {
+            try {
+                if (inputCantidad.value === '1') {
+                    inputCantidad.value = '';
+                }
+                inputCantidad.select();
+            } catch (e) {}
+        });
+        inputCantidad.addEventListener('click', () => {
+            try {
+                if (inputCantidad.value === '1') {
+                    inputCantidad.value = '';
+                }
+                inputCantidad.select();
+            } catch (e) {}
+        });
+        inputCantidad.addEventListener('keydown', (ev) => {
+            if ((ev.key === 'Backspace' || ev.key === 'Delete') && inputCantidad.value === '1') {
+                ev.preventDefault();
+                inputCantidad.value = '';
+            }
+        });
+        inputCantidad.addEventListener('blur', () => {
+            if (inputCantidad.value.trim() === '') {
+                inputCantidad.value = '1';
+                inputCantidad.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+        });
+
+        // Botones + / - (si existen en la tarjeta)
+        const btnPlus = tarjeta.querySelector('.btn-cant.plus');
+        const btnMinus = tarjeta.querySelector('.btn-cant.minus');
+
+        if (btnPlus) {
+            btnPlus.addEventListener('click', () => {
+                let v = parseInt(inputCantidad.value, 10) || 1;
+                if (v < 99) v++;
+                inputCantidad.value = v;
+                inputCantidad.dispatchEvent(new Event('input', { bubbles: true }));
+            });
+        }
+        if (btnMinus) {
+            btnMinus.addEventListener('click', () => {
+                let v = parseInt(inputCantidad.value, 10) || 1;
+                if (v > 1) v--;
+                inputCantidad.value = v;
+                inputCantidad.dispatchEvent(new Event('input', { bubbles: true }));
+            });
+        }
         botonPedido.addEventListener("click", () => {
             const cantidad = inputCantidad.value;
             const precioTotal = botonPedido.getAttribute("data-precio") || precioBase;

@@ -28,7 +28,11 @@ class RenderizadorCatalogo {
                     </span>
                     <div class="control-cantidad">
                         <label>Cant:</label>
-                        <input type="number" class="input-cantidad" value="1" min="1" max="99" inputmode="numeric" pattern="\d{1,2}">
+                        <div class="cantidad-control">
+                            <button type="button" class="btn-cant minus" aria-label="Restar">−</button>
+                            <input type="number" class="input-cantidad" value="1" min="1" max="99" inputmode="numeric" pattern="\d{1,2}">
+                            <button type="button" class="btn-cant plus" aria-label="Sumar">+</button>
+                        </div>
                     </div>
                     <div class="bloque-pedido">
                         <span class="total-producto">Total: $${producto.precio.toLocaleString('es-CO')}</span>

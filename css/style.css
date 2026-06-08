@@ -116,6 +116,25 @@ body {
     font-weight: bold;
 }
 
+.cantidad-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.btn-cant {
+    background: #2b2b2b;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+.btn-cant:active { transform: translateY(1px); }
+.btn-cant.plus { background: #444444; border-color: #aaaaaa; }
+.btn-cant.minus { background: #444444; border-color: #aaaaaa; }
+
 .bloque-pedido {
     display: flex;
     flex-direction: column;
